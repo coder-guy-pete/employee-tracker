@@ -1,4 +1,4 @@
-DROP IF EXISTS company_system;
+DROP DATABASE company_system;
 
 CREATE DATABASE company_system;
 
@@ -12,9 +12,9 @@ CREATE TABLE department (
 CREATE TABLE role (
     id SERIAL PRIMARY KEY,
     title VARCHAR(30),
-    salary DECIMAL(10, 2),
-    department_id INT,
-    FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE SET NULL
+    salary DECIMAL,
+    department INT,
+    FOREIGN KEY (department) REFERENCES department(id) ON DELETE SET NULL
 );
 
 CREATE TABLE employee (
